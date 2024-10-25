@@ -3,11 +3,11 @@ module.exports = {
      apps: [
           {
                name: "project-management",
-               script: "pnpm",
-               args: "dev",
+               script: "npm",
+               args: "run dev",
                env: {
-                    NODE_ENV: "development"
-               }
+                    NODE_ENV: "development",
+               },
           }
      ]
 }

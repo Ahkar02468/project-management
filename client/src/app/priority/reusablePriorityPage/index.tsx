@@ -67,7 +67,7 @@ const ReusablePriorityPage = ({ priority }: Props) => {
      const [view, setView] = useState("list")
      const [isModalNewTaskOpen, setIsModalNewTaskOpen] = useState(false)
      const { data: currentUser } = useGetAuthUserQuery({})
-     const userId = currentUser?.userDetails?.userId
+     const userId = currentUser?.userDetails?.userId ?? null
      const { data: tasks, isLoading, isError } = useGetTasksbyUserQuery(userId || 0, {
           skip: userId === null
      })

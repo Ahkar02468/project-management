@@ -21,8 +21,8 @@ const Sidebar = () => {
      const handleSignout = async () => {
           try {
                await signOut()
-          } catch (error: any) {
-               console.error("Error signing out ", error.message)
+          } catch (error) {
+               console.error("Error signing out ", error)
           }
      }
      if (!currentUser) return null

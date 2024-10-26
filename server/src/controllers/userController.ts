@@ -24,26 +24,25 @@ export const getUser = async (
      try {
           const user = await prisma.user.findUnique({
                where: {
-                    cognitoId: cognitoId
+                    cognitoId: cognitoId,
                }
           })
           res.json(user)
      } catch (error: any) {
           res
                .status(500)
-               .json({ message: `Error performing fetching user ${error.message}` })
+               .json({ message: `Error Error retrieving user: ${error.message}` })
      }
 }
 
 export const postUser = async (req: Request, res: Response) => {
-     const {
-          username,
-          cognitoId,
-          profilePictureUrl = "i1.jpg",
-          teamId = 1,
-     } = req.body
-
      try {
+          const {
+               username,
+               cognitoId,
+               profilePictureUrl = "i1.jpg",
+               teamId = 1,
+          } = req.body
           const newUsers = await prisma.user.create({
                data: {
                     username,

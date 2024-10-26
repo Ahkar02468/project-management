@@ -7,6 +7,7 @@ import TaskCard from '@/components/TaskCard'
 import { dataGridClassNames, dataGridSxStyles } from '@/lib/utils'
 import { Priority, Task, useGetAuthUserQuery, useGetTasksbyUserQuery } from '@/state/api'
 import { DataGrid, GridColDef } from '@mui/x-data-grid'
+import { ConsoleLogger } from 'aws-amplify/utils'
 import React, { useState } from 'react'
 
 type Props = {
@@ -67,7 +68,10 @@ const ReusablePriorityPage = ({ priority }: Props) => {
      const [view, setView] = useState("list")
      const [isModalNewTaskOpen, setIsModalNewTaskOpen] = useState(false)
      const { data: currentUser } = useGetAuthUserQuery({})
+     // console.log("Curent User=>", currentUser?.user)
      const userId = currentUser?.userDetails?.userId ?? null
+     // const userId = 1
+     // console.log("User ID=>", userId)
      const { data: tasks, isLoading, isError } = useGetTasksbyUserQuery(userId || 0, {
           skip: userId === null
      })

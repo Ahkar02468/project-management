@@ -17,35 +17,35 @@ const Navbar = () => {
      const { data: currentUser } = useGetAuthUserQuery({});
      const handleSignOut = async () => {
           try {
-         await signOut();
+               await signOut();
     } catch (error) {
          console.error("Error signing out: ", error);
     }
-     };
+  };
 
      if (!currentUser) return null;
      const currentUserDetails = currentUser?.userDetails;
 
      return (
-       <div className="flex items-center justify-between bg-white px-4 py-3 dark:bg-black">
-            {/* Search Bar */}
-            <div className="flex items-center gap-8">
-                 {!isSidebarCollapsed ? null : (
-                      <button
-                           onClick={() => dispatch(setIsSidebarCollapsed(!isSidebarCollapsed))}
-                      >
-                           <Menu className="h-8 w-8 dark:text-white" />
-                      </button>
-                 )}
-                 <div className="relative flex h-min w-[200px]">
-                      <Search className="absolute left-[4px] top-1/2 mr-2 h-5 w-5 -translate-y-1/2 transform cursor-pointer dark:text-white" />
-                      <input
-                           className="w-full rounded border-none bg-gray-100 p-2 pl-8 placeholder-gray-500 focus:border-transparent focus:outline-none dark:bg-gray-700 dark:text-white dark:placeholder-white"
-                           type="search"
-                           placeholder="Search..."
-                      />
-                 </div>
-            </div>
+          <div className="flex items-center justify-between bg-white px-4 py-3 dark:bg-black">
+               {/* Search Bar */}
+               <div className="flex items-center gap-8">
+                    {!isSidebarCollapsed ? null : (
+                         <button
+                              onClick={() => dispatch(setIsSidebarCollapsed(!isSidebarCollapsed))}
+                         >
+                              <Menu className="h-8 w-8 dark:text-white" />
+                         </button>
+                    )}
+                    <div className="relative flex h-min w-[200px]">
+                         <Search className="absolute left-[4px] top-1/2 mr-2 h-5 w-5 -translate-y-1/2 transform cursor-pointer dark:text-white" />
+                         <input
+                              className="w-full rounded border-none bg-gray-100 p-2 pl-8 placeholder-gray-500 focus:border-transparent focus:outline-none dark:bg-gray-700 dark:text-white dark:placeholder-white"
+                              type="search"
+                              placeholder="Search..."
+                         />
+                    </div>
+               </div>
 
             {/* Icons */}
             <div className="flex items-center">
@@ -78,7 +78,7 @@ const Navbar = () => {
                       <div className="align-center flex h-9 w-9 justify-center">
                            {!!currentUserDetails?.profilePictureUrl ? (
                                 <Image
-                                        src={`https://pm-sc-images.s3.us-east-1.amazonaws.com/${currentUserDetails?.profilePictureUrl}`}
+                                     src={`https://pm-s3-images.s3.us-east-2.amazonaws.com/${currentUserDetails?.profilePictureUrl}`}
                                      alt={currentUserDetails?.username || "User Profile Picture"}
                                      width={100}
                                      height={50}
@@ -100,7 +100,7 @@ const Navbar = () => {
                  </div>
             </div>
        </div>
-     );
+  );
 };
 
 export default Navbar;

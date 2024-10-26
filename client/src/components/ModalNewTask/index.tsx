@@ -39,7 +39,7 @@ const ModalNewTask = ({ isOpen, onClose, id = null }: Props) => {
           });
      };
      const isFormValid = () => {
-          return title && authorUserId && !(id !== null || projectId);
+          return title && authorUserId && !(projectId);
      };
      const inputStyles =
           "w-full rounded border border-gray-300 p-2 shadow-sm dark:border-dark-tertiary dark:bg-dark-tertiary dark:text-white dark:focus-outline-none";

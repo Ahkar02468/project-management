@@ -2,6 +2,9 @@
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app). The project is designed for managing various projects efficiently with a user-friendly interface. It provides features for creating, editing, and managing projects, tasks, and users. Priority levels are also included to help you manage tasks effectively. Tags are also included to help you manage tasks effectively.
 
+![Home Page](https://github.com/Ahkar02468/project-management/blob/main/client/public/Screenshot%202024-10-30%20035341.png)
+![PJ Page](https://github.com/Ahkar02468/project-management/blob/main/client/public/Screenshot%202024-10-30%20035409.png)
+
 ## 🗺️Table of Contents
 
 - [Getting Started](#getting-started)

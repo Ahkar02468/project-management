@@ -63,7 +63,7 @@ NEXT_PUBLIC_COGNITO_USER_POOL_CLIENT_ID="xxxxxxxxxxxxx"
  Create a .env file in the server directory and add the following environment variables:
      
 ```
-DATABASE_URL="<username>://<password>:postgres@<local or cloud>/<dbname>?schema=public"
+DATABASE_URL="postgresql://<username>:<password>@<local or cloud>/<dbname>?schema=public"
 PORT=xxxx
 ```
 Set up the database:
